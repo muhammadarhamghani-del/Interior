@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegant Interiors - Sign Up</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:Arial;
+    background:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920') center/cover;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.container{
+    width:100%;
+    max-width:400px;
+    background:rgba(0,0,0,0.85);
+    padding:40px;
+    border-radius:10px;
+}
+h1{color:#d4af37;text-align:center}
+p{color:white;text-align:center;margin-bottom:20px}
+label{color:#d4af37;font-size:14px}
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0 15px;
+    border:none;
+    border-radius:5px;
+    background:#1a1a1a;
+    color:white;
+}
+button{
+    width:100%;
+    padding:12px;
+    background:#d4af37;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+.toggle{
+    text-align:center;
+    margin-top:15px;
+    color:white;
+}
+.toggle a{
+    color:#d4af37;
+    text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>ELEGANT INTERIORS</h1>
+    <p>Create Your Account</p>
+
+    <!-- Signup form -->
+    <form action="catalogue.html">
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="toggle">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </div>
+</div>
+
+</body>
+</html>
