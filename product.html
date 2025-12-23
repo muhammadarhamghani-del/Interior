@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Elegant Interiors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            color: #d4af37;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .back-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-btn {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #0d0d0d;
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .product-left {
+            flex: 1;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .product-right {
+            flex: 1;
+        }
+
+        .product-title {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .product-desc {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-bottom: 20px;
+        }
+
+        .features h3 {
+            color: #d4af37;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            color: #cccccc;
+            font-size: 14px;
+            padding: 5px 0;
+            padding-left: 20px;
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: #d4af37;
+        }
+
+        .info-box {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #d4af37;
+        }
+
+        .info-value {
+            color: #cccccc;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .buy-btn {
+            background-color: #d4af37;
+            color: #000000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            background-color: #ffd700;
+        }
+
+        .cart-btn {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+        footer {
+            background-color: #000000;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-box h3 {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-box p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-box a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+
+        .footer-box a:hover {
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .product {
+                flex-direction: column;
+            }
+
+            .product-img {
+                height: 300px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buy-btn, .cart-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>ELEGANT INTERIORS</h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <div class="back-section">
+        <a href="catalogue.html" class="back-btn">← Back to Catalogue</a>
+    </div>
+
+    <div class="container">
+        <div class="product">
+            <div class="product-left">
+                <div class="product-img" id="productImage"></div>
+            </div>
+            <div class="product-right">
+                <h1 class="product-title" id="productName">Loading...</h1>
+                <p class="product-price" id="productPrice"></p>
+                <p class="product-desc" id="productDesc"></p>
+
+                <div class="features">
+                    <h3>Features</h3>
+                    <ul id="productFeatures"></ul>
+                </div>
+
+                <div class="info-box" id="productInfo"></div>
+
+                <div class="buttons">
+                    <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+                    <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>📞 +92-321-4567890</p>
+                <p>📧 info@elegantinteriors.com</p>
+                <p>📍 Blue Area, Islamabad</p>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <p><a href="home.html">Home</a></p>
+                <p><a href="catalogue.html">Catalogue</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var products = {
+            sofa: {
+                name: 'Modern Sofa Set',
+                price: 'Rs. 85,000',
+                image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=500',
+                desc: 'This elegant 3-seater sofa is perfect for your living room. Made with high-quality fabric and solid wooden frame.',
+                features: ['Premium fabric', 'Solid wooden legs', 'Comfortable cushions', 'Modern design', 'Easy to clean'],
+                category: 'Living Room',
+                material: 'Fabric & Wood',
+                size: '200cm x 85cm',
+                color: 'Gray'
+            },
+            table: {
+                name: 'Coffee Table',
+                price: 'Rs. 35,000',
+                image: 'https://images.unsplash.com/photo-1542372147193-a7aca54189cd?w=500',
+                desc: 'Elegant wooden coffee table. Perfect for your living room with storage space.',
+                features: [ 'Wooden frame', 'Storage space', 'Modern look', 'Easy to maintain'],
+                category: 'Living Room',
+                material: 'Wood & Glass',
+                size: '120cm x 60cm',
+                color: 'Brown'
+            },
+            tvstand: {
+                name: 'TV Stand',
+                price: 'Rs. 45,000',
+                image: 'https://plus.unsplash.com/premium_photo-1681816189276-69731364c133?w=500',
+                desc: 'Modern entertainment unit with shelves. Perfect for TVs up to 55 inches.',
+                features: ['Multiple shelves', 'Cable management', 'Sturdy design', 'Modern style', 'Easy assembly'],
+                category: 'Living Room',
+                material: 'Wood',
+                size: '150cm x 45cm',
+                color: 'White'
+            },
+            bed: {
+                name: 'King Size Bed',
+                price: 'Rs. 120,000',
+                image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200',
+                desc: 'Luxurious wooden bed frame with upholstered headboard. King size comfort for your bedroom.',
+                features: ['King size', 'Upholstered headboard', 'Solid wood frame', 'Premium quality', 'Elegant design'],
+                category: 'Bedroom',
+                material: 'Wood & Fabric',
+                size: '200cm x 180cm',
+                color: 'Beige'
+            },
+            wardrobe: {
+                name: 'Wardrobe',
+                price: 'Rs. 95,000',
+                image: 'https://images.unsplash.com/photo-1672137233327-37b0c1049e77?w=500',
+                desc: 'Spacious 4-door wardrobe with mirror. Plenty of storage space with drawers and shelves.',
+                features: ['4 doors', 'Full-length mirror', 'Multiple drawers', 'Shelves included', 'Large storage'],
+                category: 'Bedroom',
+                material: 'Wood',
+                size: '240cm x 200cm',
+                color: 'Brown'
+            },
+            bedside: {
+                name: 'Bedside Table',
+                price: 'Rs. 18,000',
+                image: 'https://images.unsplash.com/photo-1462530260150-162092dbf011?w=500',
+                desc: 'Elegant nightstand with drawer and open shelf. Perfect beside your bed.',
+                features: ['One drawer', 'Open shelf', 'Compact design', 'Solid wood', 'Easy to place'],
+                category: 'Bedroom',
+                material: 'Wood',
+                size: '50cm x 40cm',
+                color: 'Brown'
+            },
+            dining: {
+                name: 'Dining Table Set',
+                price: 'Rs. 75,000',
+                image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200',
+                desc: '6-seater wooden dining table with comfortable chairs. Perfect for family meals.',
+                features: ['8 chairs included', 'Solid wood', 'Comfortable seating', 'Large table', 'Family size'],
+                category: 'Dining Room',
+                material: 'Wood',
+                size: '180cm x 90cm',
+                color: 'Dark Brown'
+            },
+            chairs: {
+                name: 'Dining Chairs',
+                price: 'Rs. 32,000',
+                image: 'https://plus.unsplash.com/premium_photo-1705479742912-79af0f068803?w=500',
+                desc: 'Set of 4 cushioned chairs with wooden frame. Comfortable and stylish.',
+                features: ['Set of 4', 'Cushioned seats', 'Wooden frame', 'Comfortable', 'Stylish design'],
+                category: 'Dining Room',
+                material: 'Wood & Fabric',
+                size: '45cm x 45cm',
+                color: 'Gray'
+            },
+            cabinet: {
+                name: 'Buffet Cabinet',
+                price: 'Rs. 55,000',
+                image: 'https://images.unsplash.com/photo-1743838244119-3d2be1fb8ac0?w=500',
+                desc: 'Storage cabinet with glass doors. Perfect for displaying dishes.',
+                features: ['Glass doors', 'Multiple shelves', 'Storage drawers', 'Display area', 'Elegant look'],
+                category: 'Dining Room',
+                material: 'Wood & Glass',
+                size: '150cm x 80cm',
+                color: 'Brown'
+            }
+        };
+
+        function getProductId() {
+            var url = window.location.href;
+            var match = url.match(/[?&]id=([^&]+)/);
+            if (match) {
+                return match[1];
+            }
+            return 'sofa';
+        }
+
+        function showProduct() {
+            var id = getProductId();
+            var product = products[id];
+
+            if (!product) {
+                product = products['sofa'];
+            }
+
+            document.getElementById('productImage').style.backgroundImage = 'url(' + product.image + ')';
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productDesc').textContent = product.desc;
+
+            var featuresList = document.getElementById('productFeatures');
+            featuresList.innerHTML = '';
+            for (var i = 0; i < product.features.length; i++) {
+                var li = document.createElement('li');
+                li.textContent = product.features[i];
+                featuresList.appendChild(li);
+            }
+
+            document.getElementById('productInfo').innerHTML = 
+                '<div class="info-row"><span class="info-label">Category:</span><span class="info-value">' + product.category + '</span></div>' +
+                '<div class="info-row"><span class="info-label">Material:</span><span class="info-value">' + product.material + '</span></div>' +
+                '<div class="info-row"><span class="info-label">Size:</span><span class="info-value">' + product.size + '</span></div>' +
+                '<div class="info-row"><span class="info-label">Color:</span><span class="info-value">' + product.color + '</span></div>';
+        }
+
+        showProduct();
+
+        function toggleMenu() {
+            var nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        function buyNow() {
+            alert('Thank you for your purchase!');
+        }
+
+        function addToCart() {
+            alert('Product added to cart!');
+        }
+    </script>
+</body>
+</html>
