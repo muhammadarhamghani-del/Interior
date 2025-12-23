@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Elegant Interiors</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 20px;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            color: #d4af37;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #0d0d0d;
+        }
+
+        .page-title h1 {
+            color: #d4af37;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #cccccc;
+            font-size: 16px;
+        }
+
+        /* Contact Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            flex: 1;
+            background-color: #0d0d0d;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-form h2 {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d4af37;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background-color: #d4af37;
+            color: #000000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffd700;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            flex: 1;
+            background-color: #0d0d0d;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h3 {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .info-item p {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .social-box {
+            margin-top: 30px;
+        }
+
+        .social-box h3 {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-box h3 {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-box p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-box a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+
+        .footer-box a:hover {
+            color: #d4af37;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>ELEGANT INTERIORS</h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </div>
+
+    <!-- Contact Container -->
+    <div class="container">
+        <div class="contact-wrapper">
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form onsubmit="sendMessage(event)">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea id="message" placeholder="Write your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="info-item">
+                    <h3>📞 Phone</h3>
+                    <p>+92-321-4567890</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📧 Email</h3>
+                    <p>info@elegantinteriors.com</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📍 Address</h3>
+                    <p>Blue Area, Islamabad, Pakistan</p>
+                </div>
+
+                <div class="social-box">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">📘 Facebook</a>
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">💬 WhatsApp</a>
+                        <a href="#">💼 LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>📞 +92-321-4567890</p>
+                <p>📧 info@elegantinteriors.com</p>
+                <p>📍 Blue Area, Islamabad</p>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <p><a href="home.html">Home</a></p>
+                <p><a href="categories.html">Categories</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            alert('Thank you ' + name + '! We will contact you soon.');
+        }
+    </script>
+</body>
+</html>
