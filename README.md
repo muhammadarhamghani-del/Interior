@@ -1,19 +1,19 @@
-Shop Interior Website
+# Shop Interior Website
 
-A semester project website showcasing shop interior designs using HTML, CSS, and JavaScript.
+A semester project website showcasing shop interior designs using HTML, CSS, and JavaScript. The website demonstrates basic web development skills with a simple and responsive layout.
 
-Authors:
+## Features
+- Home page with shop interior introduction
+- Interior design sections with images and descriptions
+- Easy navigation between pages
+- Responsive layout for different screen sizes
 
-Muhammad Saud Nauman
+## Authors
+- Muhammad Saud Nauman
+- Hanzallah Manzoor
+- Muhammad Arham Ghani
 
-Hanzallah Manzoor
-
-Muhammad Arham Ghani
-
-Tech Stack:
-
-HTML
-
-CSS
-
-JavaScript
+## Tech Stack
+- HTML
+- CSS
+- JavaScript
